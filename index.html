@@ -1,160 +1,161 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="google" value="notranslate">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <meta name="google" value="notranslate">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel='stylesheet' href="./index.css">
+        <link rel="icon" href="imgs/air.ico">
+        <title>Flight schedule</title>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <header class="page-header">
+            <h1>Departures&Arrivals Info</h1>
+        </header>
+        <main>
+            <nav class='topnav'>
+                <ul>
+                    <li>
+                        <input type="radio" id='displ-departures' name="displ-departures">
+                        <label for='displ-departures'>Departures</label>
+                    </li>
+                    <li>
+                        <input type="radio" id='displ-arrivals' name="displ-arrivals">
+                        <label for='displ-arrivals'>Arrivals</label>
+                    </li>
+                    <li>
+                        <input type="radio" id='displ-all' name="displ-all">
+                        <label for='displ-all'>All</label>
+                    </li>
+                    <li>
+                        <input type="radio" id='displ-delayed' name="displ-delayed">
+                        <label for='displ-delayed'>Delayed</label>
+                    </li>
+                    <li>
+                        <form class="search-container">
+                            
+                            <input class="user-query" type="text" id="flight-search" placeholder="Type your board number" name="">
+                            
+                        </form>
+                    </li>
+            </nav>
+            <table id='flights-info' class="flights-info">
+                <tr class='table-head'>
+                    <th scope="col">Flight type</th>
+                    <th scope="col">Aircompany</th>
+                    <th scope="col">Airbus</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Flight number</th>
+                    <th scope="col">Delayed</th>
+                </tr>
+                <tr class='departure'>
+                    <td>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                    </td>
+                    <td>Aeroflot</td>
+                    <td>Boeing</td>
+                    <td>Tenerife</td>
+                    <td class='flight-n'>SU 206</td>
+                    <td>-</td>
+                </tr>
+                <tr class='arrival'>
+                    <td>
+                        <i class="fas fa-plane-arrival fa-3x"></i>
+                    </td>
+                    <td>Aeroflot</td>
+                    <td>Airbus A320</td>
+                    <td>Berlin</td>
+                    <td class='flight-n'>SU 2101</td>
+                    <td>-</td>
+                </tr>
+                <tr class='arrival'>
+                    <td>
+                        <i class="fas fa-plane-arrival fa-3x"></i>
+                    </td>
+                    <td>Alitalia</td>
+                    <td>Airbus A320</td>
+                    <td>Milan</td>
+                    <td class='flight-n'> D306</td>
+                    <td>-</td>
+                </tr>
+                <tr class='arrival as_planned'>
+                    <td>
+                        <i class="fas fa-plane-arrival fa-3x"></i>
+                    </td>
+                    <td>LOT</td>
+                    <td>Airbus A321</td>
+                    <td>Warsaw</td>
+                    <td class='flight-n'>SU 2006</td>
+                    <td>-</td>
+                </tr>
+                <tr class='departure'>
+                    <td>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                    </td>
+                    <td>Lufthansa</td>
+                    <td>Airbus A330</td>
+                    <td>Los-Angeles</td>
+                    <td class='flight-n'>SU 106</td>
+                    <td>-</td>
+                </tr>
+                <tr class='departure'>
+                    <td>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                    </td>
+                    <td>Aeroflot</td>
+                    <td>Airbus A320</td>
+                    <td>Saint-Petersburg</td>
+                    <td class='flight-n'></td>
+                    <td>-</td>
+                </tr>
+                <tr class='departure as_planned'>
+                    <td>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                    </td>
+                    <td>Red wings</td>
+                    <td>Boeing</td>
+                    <td>Simferopol</td>
+                    <td class='flight-n'>SU 1636</td>
+                    <td>-</td>
+                </tr>
+                <tr class='departure as_planned'>
+                    <td>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                    </td>
+                    <td>Red wings</td>
+                    <td>Airbus A320</td>
+                    <td>Ekaterinburg</td>
+                    <td class='flight-n'>SU 1408</td>
+                    <td>Now Boarding</td>
+                </tr>
+                <tr class='departure as_planned'>
+                    <td>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                    </td>
+                    <td>Red wings</td>
+                    <td>Sukhoi Superjet 100</td>
+                    <td>Minsk</td>
+                    <td class='flight-n'>SU 1838</td>
+                    <td>-</td>
+                </tr>
+                <tr class='departure'>
+                    <td>
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                    </td>
+                    <td>Red wings</td>
+                    <td>Boeing</td>
+                    <td>Istanbul</td>
+                    <td class='flight-n'></td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </main>
+        <footer></footer>
+        <script src="./index.js"></script>
+       
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-	<link rel='stylesheet' href="./index.css">
-	<link rel="icon" href="imgs/air.ico">
-	<title>Flight schedule</title>
-</head>
-<body>
-	<header class="page-header">
-	<h1>Departures/Arrivals Info</h1>
-</header>
-
-<main>
-
-
-	<nav class='topnav'>
-		<ul>
-			<li><input type="radio" id='displ-departures' name="displ-departures">
-		<label for='displ-departures'>Departures</label></li>
-
-			<li><input type="radio" id='displ-arrivals' name="displ-arrivals">
-		<label for='displ-arrivals'>Arrivals</label></li>
-
-			<li><input type="radio" id='displ-all' name="displ-all">
-		<label for='displ-all'>All</label></li>
-			<li><input type="radio" id='displ-delayed' name="displ-delayed">
-		<label for='displ-delayed'>Delayed</label> </li>
-
-		<li> <div class="search-container">
-			<label for='flight-search'>Search by flight number:</label>
-		<input type="text" id="flight-search" placeholder="Type your board number" name="">
-		<button type="submit"><i class="fa fa-search"></i></button>
-	</div>
-	</li>
-	</nav>
-		<table class="flights-info" >
-		    
-		  
-		    <tr class='table-head'>		        
-		        <th scope="col">Flight type</th>
-		        <th scope="col">Aircompany</th>
-		        <th scope="col">Airbus</th>
-		        <th scope="col">To</th>
-		        <th scope="col">Flight number</th>
-		        <th scope="col">Delayed</th>
-
-		    </tr>
-		    <tr class='departure'>
-		        <td><i class="fas fa-plane-departure fa-3x"></i></td>
-		        <td>Aeroflot</td>
-		        <td>Boeing</td>
-		        <td>Tenerife</td>
-		        <td></td>
-		        <td>-</td>
-		        
-		    </tr>
-		    <tr class='arrival'>
-		        <td ><i class="fas fa-plane-arrival fa-3x"></i></td>
-		        <td>Aeroflot</td>
-		        <td>Airbus A320</td>
-		        <td>Berlin</td>
-		        <td></td>
-		        <td>-</td>
-		        
-		    </tr>
-		    <tr class='arrival'>
-		        <td><i class="fas fa-plane-arrival fa-3x"></i></td>
-		        <td>Alitalia</td>
-		        <td>Airbus A320</td>
-		        <td>Milan</td>
-		        <td></td>
-		        <td>-</td>
-		        
-		    </tr>
-		    <tr class='arrival as_planned'>
-		        <td><i class="fas fa-plane-arrival fa-3x"></i></td>
-		        <td>LOT</td>
-		        <td>Airbus A321</td>
-		        <td>Warsaw</td>
-		        <td>SU 2006</td>
-		        <td>-</td>
-		        
-		    </tr>
-		    <tr class='departure'>
-		        <td><i class="fas fa-plane-departure fa-3x"></i></td>
-		        <td>Lufthansa</td>
-		        <td>Airbus A330</td>
-		        <td>Los-Angeles</td>
-		        <td>SU 106</td>
-		        <td>-</td>
-		        
-		    </tr>
-		    <tr class='departure'>
-		        <td><i class="fas fa-plane-departure fa-3x"></i></td>
-		        <td>Aeroflot</td>
-		        <td>Airbus A320</td>
-		        <td>Saint-Petersburg</td>
-		        <td></td>
-		        <td>-</td>
-		        
-		    </tr>
-		    <tr class='departure as_planned'>
-		        <td><i class="fas fa-plane-departure fa-3x"></i></td>
-		        <td>Red wings</td>
-		        <td>Boeing</td>
-		        <td>Simferopol</td>
-		        <td>SU 1636</td>
-		        <td> -</td>
-
-		        
-		    </tr>
-		    	<tr class='departure as_planned'>
-		        <td><i class="fas fa-plane-departure fa-3x"></i></td>
-		        <td>Red wings</td>
-		        <td>Airbus A320</td>
-		        <td>Ekaterinburg</td>
-		        <td>SU 1408</td>
-		        <td>Now Boarding</td>
-		        
-		    </tr>
-		    <tr class='departure as_planned'>
-		        <td><i class="fas fa-plane-departure fa-3x"></i></td>
-		        <td>Red wings</td>
-		        <td>Sukhoi Superjet 100</td>
-		        <td>Minsk</td>
-		        <td>SU 1838</td>
-		        <td>-</td>
-		        
-		    </tr>
-		    <tr class='departure'>
-		        <td><i class="fas fa-plane-departure fa-3x"></i></td>
-		        <td>Red wings</td>
-		        <td>Boeing</td>
-		        <td>Istanbul</td>
-		        <td></td>
-		        <td>-</td>
-		    </tr>
-		</table>
-		
-
-
-	
-
-
-
-
-	</main>
-
-<footer>
-	
-</footer>
-
-<script  src="./index.js"></script>
-</body>
+        
+    </body>
 </html>

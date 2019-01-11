@@ -1,3 +1,12 @@
+$(".user-query").on("keyup", function() {
+  var inputValue = $('.user-query').val().toLowerCase();
+  $("#flights-info tr.departure, #flights-info tr.arrival ").filter(function() {
+    $(this).toggle($(this).children('.flight-n').text().toLowerCase().indexOf(inputValue) > -1)
+  });
+});
+
+
+
 const show_departuresCheckbox = document.querySelector("#displ-departures");
 const show_arrivalsCheckbox = document.querySelector('#displ-arrivals');
 const show_allCheckbox = document.querySelector('#displ-all');
@@ -75,3 +84,5 @@ show_delayedCheckbox.addEventListener('click', (event) => {
 	}
 
 });
+
+
