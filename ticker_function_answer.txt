@@ -1,0 +1,21 @@
+
+Так как у ticker.hasOwnProperty('tick') === false, то у функции function() this === window, (в Node.js this === global). 
+А у этих объектов нет атрибута числового типа _i.
+
+Исправить можно так:
+
+
+function Ticker() {
+     _i = 0;
+    return  {
+      tick: function() {
+       console.log(_i++);
+    }
+    }
+};
+
+ticker = Ticker();
+
+setInterval(ticker.tick, 1000);
+
+
